@@ -4,7 +4,7 @@
 2. Make necessary change in `source_source_daimon.sql` (check update in webapi doc https://github.com/OHDSI/Broadsea/tree/master/sqlserver)
 3. Put `Cong_scratch` before ohdsi. `pring.jpa.properties.hibernate.default_schema=Cong_scratch.ohdsi`. Otherwise it will cause troubles.
 4. Move results.\* tables to `Cong_scratch` and change schema to `results` to `ohdsi`.
-5. Docker will manipulate iptables. So change the yml file.https://docs.docker.com/compose/compose-file/#ports
+5. Docker will manipulate iptables. So change the yml file.https://docs.docker.com/compose/compose-file/#ports add 127.0.0.1 to restrict the port binding.
 ```
 broadsea-webtools:
     image: ohdsi/broadsea-webtools
